@@ -1,13 +1,17 @@
-import "./App.css";
-import Container from "@mui/material/Container";
-import Header from "./components/header/Header";
+import { useState } from "react";
+import MainButton from "./components/MainButton";
+import { MainContainer } from "./styles/global";
 
 function App() {
+  const [start, setStart] = useState(true);
   return (
     <div>
-      <Container>
-        <Header />
-      </Container>
+      {start ? (
+        <MainContainer>
+          <MainButton setStart={setStart} />
+        </MainContainer>
+      ) : null}
+      <MainContainer></MainContainer>
     </div>
   );
 }
